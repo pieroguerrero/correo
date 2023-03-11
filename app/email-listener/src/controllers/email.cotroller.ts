@@ -26,8 +26,10 @@ export class EmailController {
     const email = await this.emailUseCases.createIncomingEmail(createEmailDto);
     if (email['_id']) {
       try {
-        this.gateway.server.emit('newEmail', email);
-        return { newEmailId: email['_id'], messageEmitted: 'YES' };
+        if (this.gateway.server.emit('newEmail', email)) {
+          return { newEmailId: email['_id'], messageEmitted: 'YES' };
+        }
+        return { newEmailId: email['_id'], messageEmitted: 'NO' };
       } catch (error) {
         return { newEmailId: email['_id'], messageEmitted: 'NO', error };
       }

@@ -1,0 +1,30 @@
+version: "3.9"
+name: correo
+services:
+  mongodb-service:
+    container_name: mongodb-service
+    image: mongo:6.0.4
+    ports:
+      - "27017:27017"
+    environment:
+      - MONGO_INITDB_ROOT_USERNAME=admin
+      - MONGO_INITDB_ROOT_PASSWORD=admin
+      - MONGO_INITDB_DATABASE=correodb
+    volumes:
+      - ./mongo-init.js:/docker-entrypoint-initdb.d/mongo-init.js:ro
+      - mongo-data:/data/db
+  email-listener-service:
+    container_name: email-listener-service
+    build:
+      context: ../email-listener/
+      dockerfile: Dockerfile
+    #Include only if data is going to change in the Container
+    #volumes:
+    #  - ./:/email-listener
+    #   - ./node_modules:/email-listener/node_modules
+    ports:
+      - 9001:9001
+    links:
+      - mongodb-service
+volumes:
+  mongo-data:

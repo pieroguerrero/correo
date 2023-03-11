@@ -1,4 +1,26 @@
-export const DATA_BASE_CONFIGURATION = {
-  dbConnectionString:
-    'mongodb://admin:admin@localhost:27017/correo?authSource=admin', //process.env.CLEAN_NEST_MONGO_CONNECTION_STRING as string,
+export const EnvConfigFile = {
+  dbConnectionString: {
+    name: 'DB_CONNECTION_STRING',
+    /**
+     * This value is available only during the runtime of the application
+     */
+    getValue() {
+      return process.env.DB_CONNECTION_STRING;
+    },
+  },
+  restApiPort: {
+    name: 'REST_API_PORT',
+    /**
+     * This value is available only during the runtime of the application
+     */
+    getValue() {
+      return process.env.REST_API_PORT;
+    },
+  },
+  webSocketServicePort: {
+    name: 'WEB_SOCKET_PORT',
+    getValue() {
+      return process.env.WEB_SOCKET_PORT;
+    },
+  },
 };

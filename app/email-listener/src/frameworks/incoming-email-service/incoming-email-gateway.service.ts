@@ -1,9 +1,11 @@
 import { WebSocketGateway, WebSocketServer } from '@nestjs/websockets';
 import { Server } from 'socket.io';
 import { OnModuleInit } from '@nestjs/common';
+import { EnvConfigFile } from 'src/configuration';
 
-@WebSocketGateway(9002, { cors: '*' })
-//@WebSocketGateway({ cors: '*' })
+@WebSocketGateway(Number(EnvConfigFile.webSocketServicePort.getValue()), {
+  cors: { origin: '*' },
+})
 export class IncomingEmailGatewayService implements OnModuleInit {
   @WebSocketServer()
   server: Server;
