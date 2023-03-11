@@ -16,7 +16,19 @@ export class Email {
   @Prop({ required: true })
   body: string;
   @Prop({ required: true })
-  status: 'ACTIVE' | 'INACTIVE';
+  isActive: boolean;
+  @Prop({ required: true })
+  created: Date;
+  @Prop()
+  received: Date;
+  @Prop()
+  sent: Date;
+  @Prop({ required: true })
+  isRead: boolean;
+  @Prop({ required: true })
+  priority: string;
+  @Prop({ required: true })
+  type: string;
 }
 
 export const EmailSchema = SchemaFactory.createForClass(Email);

@@ -1,31 +1,36 @@
-import { Controller, Get, Param, Post, Body, Put } from '@nestjs/common';
-import { CreateEmailDTO, UpdateEmailDTO } from 'src/core';
+import { Controller, Get, Post, Body } from '@nestjs/common';
+import { CreateEmailDTO } from 'src/core';
+import { IncomingEmailGatewayService } from 'src/frameworks/incoming-email-service/incoming-email-gateway.service';
 import { EmailUseCases } from 'src/use-cases/email/email.use-case';
 
-@Controller('api/emails')
+@Controller('correo/receive')
 export class EmailController {
-  constructor(private emailUseCases: EmailUseCases) {}
+  constructor(
+    /**
+     * Property that contains the different Use Cases of the Email entity.
+     */
+    private emailUseCases: EmailUseCases,
+    /**
+     * Property that contains the socket.io instance.
+     */
+    private gateway: IncomingEmailGatewayService,
+  ) {}
 
   @Get()
   async getAll() {
     return this.emailUseCases.getAllEmails();
   }
 
-  @Get(':id')
-  async getById(@Param('id') id: any) {
-    return this.emailUseCases.getEmailById(id);
-  }
-
   @Post()
-  createEmail(@Body() createEmailDto: CreateEmailDTO) {
-    return this.emailUseCases.createEmail(createEmailDto);
-  }
-
-  @Put(':id')
-  updateAuthor(
-    @Param('id') emailId: string,
-    @Body() updateEmailDto: UpdateEmailDTO,
-  ) {
-    return this.emailUseCases.updateEmail(emailId, updateEmailDto);
+  async receiveEmail(@Body() createEmailDto: CreateEmailDTO) {
+    const email = await this.emailUseCases.createIncomingEmail(createEmailDto);
+    if (email['_id']) {
+      try {
+        this.gateway.server.emit('newEmail', email);
+        return { newEmailId: email['_id'], messageEmitted: 'YES' };
+      } catch (error) {
+        return { newEmailId: email['_id'], messageEmitted: 'NO', error };
+      }
+    }
   }
 }
