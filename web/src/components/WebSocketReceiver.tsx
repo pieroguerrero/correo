@@ -14,5 +14,9 @@ export function WebSocketReceiver() {
       socket.off("newEmail");
     };
   }, []);
-  return <div>{newEmail ? newEmail["from"] : "No messages"}</div>;
+  return (
+    <div className=" text-red-600">
+      {newEmail ? newEmail["from"] : "No messages"}
+    </div>
+  );
 }
