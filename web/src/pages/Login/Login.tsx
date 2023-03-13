@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { IUserAccount, shapeUserAccount } from "../../models/UserAccount";
+import { IUserAccount, shapeUserAccount } from "../../entities/UserAccount";
 import NavPaths from "../../utilities/NavPaths";
 
 interface ILogin {

@@ -1,9 +1,8 @@
 import { useState } from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { UserAccountProvider } from "./contexts/UserAccountContext";
-
+import { IUserAccount } from "./interfaces";
 import { Mail } from "./layouts/Mail/Mail";
-import { IUserAccount } from "./models/UserAccount";
 import { Inbox } from "./pages/Inbox/Inbox";
 import { Login } from "./pages/Login/Login";
 import { Sent } from "./pages/Sent/Sent";

@@ -1,5 +1,5 @@
 import { createContext } from "react";
-import { IUserAccount } from "../models/UserAccount";
+import { IUserAccount } from "../entities/UserAccount";
 
 interface IUserAccountProvider {
   userAccount: IUserAccount | null;
