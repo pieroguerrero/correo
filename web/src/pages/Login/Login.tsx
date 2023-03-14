@@ -1,18 +1,23 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { IUserAccount, shapeUserAccount } from "../../entities/UserAccount";
+import { IUserAccount, shapeUserAccount } from "../../models/UserAccount";
 import NavPaths from "../../utilities/NavPaths";
 
 interface ILogin {
   setUserAccount: (userAccount: IUserAccount | null) => void;
 }
 
+/**
+ * The Login is going to enable the listening of an specific email inbox
+ * @returns
+ */
 export function Login({ setUserAccount }: ILogin) {
   const [email, setEmail] = useState("");
 
   const navigate = useNavigate();
 
-  const handleSubmit = () => {
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
     if (email.includes("@")) {
       const userAccount = shapeUserAccount("No Name", "No Last Name", email);
       setUserAccount(userAccount);

@@ -1,25 +1,19 @@
 import { useEffect } from "react";
-import { io, Socket } from "socket.io-client";
+//import { io, Socket } from "socket.io-client";
 import { IEmail } from "../interfaces";
-import ConfigValues from "../utilities/ConfigValues";
-
-let socket: Socket;
+import ListenerService from "../services/listener-service/ListenerService";
+//import ConfigValues from "../utilities/ConfigValues";
 
 /**
  * Executes a custom callback when when a new email arrives. Internally configures the email of the current User account.
  *
  */
 const useNewEmailNotification = (callback: (newEmail: IEmail) => void) => {
-  if (!socket) {
-    socket = io(ConfigValues.EmailListenerSocketURL, {
-      transports: ["websocket", "polling", "flashsocket"],
-    });
-  }
-
   useEffect(() => {
-    socket.on("newEmail", callback);
+    //Subscribe to the event
+    ListenerService.on("newEmail", callback);
     return () => {
-      socket.off("newEmail");
+      ListenerService.off("newEmail");
     };
   }, []);
 };

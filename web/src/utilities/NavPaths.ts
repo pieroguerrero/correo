@@ -1,3 +1,6 @@
+/**
+ * Provides the routes catalog for the application
+ */
 const NavPaths = Object.freeze({
   Unknown: { path: "*", name: "Unkwnow page" },
   Base: { path: "/", name: "Account" },

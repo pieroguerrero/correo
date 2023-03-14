@@ -1,7 +1,7 @@
-import { IEmail } from "../../interfaces";
+import { IEmailListDTO } from "../../dtos";
 import EmailItem from "./components/EmailItem";
 interface IEmailList {
-  emails: IEmail[];
+  emails: IEmailListDTO[];
 }
 
 /**
@@ -9,14 +9,16 @@ interface IEmailList {
  * @returns
  */
 export function EmailList({ emails }: IEmailList) {
-  //const userAccount = useContext(UserAccountContext);
+  const today = new Date().toString();
   return (
-    <div>
-      <ul>
+    <table className="w-full">
+      <tbody>
         {emails.length === 0
           ? null
-          : emails.map((email) => <EmailItem key={email._id} email={email} />)}
-      </ul>
-    </div>
+          : emails.map((email) => (
+              <EmailItem key={email._id} email={email} today={today} />
+            ))}
+      </tbody>
+    </table>
   );
 }

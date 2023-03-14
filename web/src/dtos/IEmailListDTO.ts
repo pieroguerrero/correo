@@ -1,19 +1,20 @@
 import { EmailPriority } from "./EnEmailPriority";
 import { EmailType } from "./EnEmailType";
 
-export interface IEmail {
+export interface IEmailListDTO {
   _id: string;
   from: string;
-  fromFullName: string;
+  senderName: string;
   to: string;
   subject: string;
+  subjectDetails: string;
   body: string;
   isActive: boolean;
   type: EmailType | string;
   priority: EmailPriority | string;
-  created: Date;
-  received: Date;
-  sent: Date;
+  created: string;
+  received: string;
+  sent: string;
   isRead: boolean;
   cc: string;
   bcc: string;
