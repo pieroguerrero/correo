@@ -1,19 +1,23 @@
+import { useContext } from "react";
 import { useQuery, useQueryClient } from "react-query";
 import EmailFilters from "../../components/EmailFilters/EmailFilters";
 import { EmailList } from "../../components/EmailList";
+import { UserAccountContext } from "../../contexts/UserAccountContext";
 import { IEmailListDTO } from "../../dtos";
 import useNewEmailNotification from "../../hooks/useWebSocket";
-import { listEmails } from "../../services/api-service/email-service";
+import { listInboxEmails } from "../../services/api-service/email-service";
 import ConfigValues from "../../utilities/ConfigValues";
 import { EmailTabs } from "./components/EmailTabs/EmailTabs";
+
 /**
  * Renders thte main email folder component: the Inbox.
  * @returns
  */
 export function Inbox() {
+  const userAccount = useContext(UserAccountContext);
   const { isLoading, data, error } = useQuery<IEmailListDTO[]>(
     ConfigValues.ReactQueryKeys.InboxEmails,
-    listEmails
+    listInboxEmails.bind(null, userAccount.email)
   );
 
   const queryClient = useQueryClient();
@@ -28,10 +32,6 @@ export function Inbox() {
       }
     );
   });
-  //const navigate = useNavigate();
-  //const handleClick = () => {
-  // navigate(NavPaths.Base.path + NavPaths.Sent.path);
-  //};
   return (
     <div className="grid h-full grid-cols-1 grid-rows-[max-content_max-content_auto]">
       <section className="  row-start-1 row-end-2">

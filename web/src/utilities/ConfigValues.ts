@@ -3,7 +3,7 @@
  */
 const ConfigValues = Object.freeze({
   EmailListenerSocketURL: "http://localhost:9001",
-  ListEmailsServiceApiURL: "http://localhost:9001/correo/receive",
+  ListInboxEmailsServiceApiURL: "http://localhost:9002/correo/list/inbox",
   ReactQueryKeys: {
     InboxEmails: "inbox-emails",
   },

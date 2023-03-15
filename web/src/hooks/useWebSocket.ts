@@ -1,19 +1,22 @@
-import { useEffect } from "react";
-//import { io, Socket } from "socket.io-client";
-import { IEmail } from "../interfaces";
+import { useContext, useEffect } from "react";
+import { UserAccountContext } from "../contexts/UserAccountContext";
+import { IEmailListDTO } from "../dtos";
 import ListenerService from "../services/listener-service/ListenerService";
-//import ConfigValues from "../utilities/ConfigValues";
 
 /**
  * Executes a custom callback when when a new email arrives. Internally configures the email of the current User account.
  *
  */
-const useNewEmailNotification = (callback: (newEmail: IEmail) => void) => {
+const useNewEmailNotification = (
+  callback: (newEmail: IEmailListDTO) => void
+) => {
+  const useAccount = useContext(UserAccountContext);
+
   useEffect(() => {
     //Subscribe to the event
-    ListenerService.on("newEmail", callback);
+    ListenerService.on(useAccount.email.trim().toLowerCase(), callback);
     return () => {
-      ListenerService.off("newEmail");
+      ListenerService.off(useAccount.email.trim().toLowerCase());
     };
   }, []);
 };

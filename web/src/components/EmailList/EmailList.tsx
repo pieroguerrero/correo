@@ -9,7 +9,7 @@ interface IEmailList {
  * @returns
  */
 export function EmailList({ emails }: IEmailList) {
-  const today = new Date().toString();
+  const today = new Date().toDateString();
   return (
     <table className="w-full">
       <tbody>

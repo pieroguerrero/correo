@@ -3,20 +3,20 @@ import { InjectModel } from '@nestjs/mongoose';
 import { Model } from 'mongoose';
 import { MongoGenericRepository } from './mongo-generic-repository';
 import { IDataServices } from 'src/core';
-import { Email, EmailDocument } from './models';
+import { EmailModel, EmailDocument } from './models';
 
 @Injectable()
 export class MongoDataServices
   implements IDataServices, OnApplicationBootstrap
 {
-  emails: MongoGenericRepository<Email>;
+  emails: MongoGenericRepository<EmailModel>;
 
   constructor(
-    @InjectModel(Email.name)
+    @InjectModel(EmailModel.name)
     private EmailRepository: Model<EmailDocument>,
   ) {}
 
   onApplicationBootstrap() {
-    this.emails = new MongoGenericRepository<Email>(this.EmailRepository);
+    this.emails = new MongoGenericRepository<EmailModel>(this.EmailRepository);
   }
 }

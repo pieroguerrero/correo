@@ -49,7 +49,7 @@ export default function EmailItem({ email, today }: IEmailItem) {
       </td>
       <td className="flex-1 shrink-0 flex items-center">
         <button className="flex flex-row items-center space-x-4 w-full">
-          <div className="w-[200px]">
+          <div className="w-[200px] text-left">
             <p className="text-sm font-bold ">
               {email.senderName ? email.senderName : email.from}
             </p>
@@ -68,7 +68,7 @@ export default function EmailItem({ email, today }: IEmailItem) {
             {/* (new Date(item.data.created * 1000)).toLocaleString() */}
             <p className="text-sm font-semibold">
               {parseISO(email.created).toDateString() === today
-                ? format(parseISO(email.created), "h:m a")
+                ? format(parseISO(email.created), "h:mm a")
                 : format(parseISO(email.created), "LLL d")}
               {/* {format(parseISO(email.created), "yyyy-MM-dd")} */}
             </p>

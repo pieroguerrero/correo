@@ -6,7 +6,7 @@ export class AppController {
   constructor() {}
 
   @Get()
-  getHello(): string {
-    return "Hello from 'app.controller'";
+  getMessage(): string {
+    return 'Email Listener Service is up and running';
   }
 }

@@ -1,5 +1,5 @@
 import { Injectable } from '@nestjs/common';
-import { CreateEmailDTO, Email, IDataServices } from 'src/core';
+import { CreateEmailDTO, EmailEntity, IDataServices } from 'src/core';
 import { EmailFactoryService } from './email-factory.service';
 
 @Injectable()
@@ -9,11 +9,7 @@ export class EmailUseCases {
     private emailFactoryService: EmailFactoryService,
   ) {}
 
-  getAllEmails(): Promise<Email[]> {
-    return this.dataServices.emails.getAll();
-  }
-
-  createIncomingEmail(createEmailDto: CreateEmailDTO): Promise<Email> {
+  createIncomingEmail(createEmailDto: CreateEmailDTO): Promise<EmailEntity> {
     const email = this.emailFactoryService.createIncomingEmail(createEmailDto);
     return this.dataServices.emails.createIncomingEmail(email);
   }

@@ -23,4 +23,10 @@ export const EnvConfigFile = {
       return process.env.WEB_SOCKET_PORT;
     },
   },
+  serviceURL: {
+    name: 'SERVICE_URL_PATH',
+    getValue() {
+      return 'correo/receive';
+    },
+  },
 };

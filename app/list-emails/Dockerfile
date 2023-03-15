@@ -11,5 +11,5 @@ RUN npm install
 #Only the files not included in the .dockerignore are going to be copied
 COPY ./ ./
 
-EXPOSE 9001
+EXPOSE 9002
 CMD ["npm","run","start:dev"]

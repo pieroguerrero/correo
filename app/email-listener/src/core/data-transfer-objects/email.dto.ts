@@ -1,9 +1,9 @@
-import { IsString, IsNotEmpty, IsIn } from 'class-validator';
+import { IsString, IsNotEmpty, IsIn, IsEmail } from 'class-validator';
 import { PartialType } from '@nestjs/mapped-types';
 import { EmailPriority } from '../entities/email-priority.entity';
 import { EmailType } from '../entities/email-type.entity';
 export class CreateEmailDTO {
-  @IsString()
+  @IsEmail()
   @IsNotEmpty()
   from: string;
   @IsString()
@@ -11,7 +11,12 @@ export class CreateEmailDTO {
   to: string;
   @IsString()
   @IsNotEmpty()
+  senderName: string;
+  @IsString()
+  @IsNotEmpty()
   subject: string;
+  @IsString()
+  subjectDetails: string;
   @IsString()
   @IsNotEmpty()
   body: string;
@@ -23,6 +28,12 @@ export class CreateEmailDTO {
   @IsNotEmpty()
   @IsIn([EmailType.TEXT])
   type: EmailType;
+
+  @IsString()
+  cc: string;
+
+  @IsString()
+  bcc: string;
 }
 
 export class UpdateEmailDTO extends PartialType(CreateEmailDTO) {}

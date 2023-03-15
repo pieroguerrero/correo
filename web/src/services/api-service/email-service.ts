@@ -5,12 +5,16 @@ import { getData } from "./axios-generic";
 
 //TODO: implement pagination and search capabilities
 /**
- * List the emails from an specific email account
+ * List the emails present in the Inbox from an specific email account
  * @returns
  */
-export function listEmails(): Promise<IEmailListDTO[]> {
+export function listInboxEmails(
+  emailAccount: string
+): Promise<IEmailListDTO[]> {
   try {
-    return getData<IEmailListDTO[]>(ConfigValues.ListEmailsServiceApiURL);
+    return getData<IEmailListDTO[]>(ConfigValues.ListInboxEmailsServiceApiURL, {
+      email: emailAccount,
+    });
   } catch (error) {
     handleException(error);
     throw error;

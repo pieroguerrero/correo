@@ -18,13 +18,22 @@ services:
     build:
       context: ../email-listener/
       dockerfile: Dockerfile
-    #Include only if data is going to change in the Container
-    #volumes:
-    #  - ./:/email-listener
-    #   - ./node_modules:/email-listener/node_modules
+     #Include only if data is going to change in the Container
+     #volumes:
+     #  - ./:/email-listener
+     #   - ./node_modules:/email-listener/node_modules
     ports:
-      - 9001:9001
+       - 9001:9001
     links:
-      - mongodb-service
+       - mongodb-service
+  list-emails-service:
+    container_name: list-emails-service
+    build:
+      context: ../list-emails/
+      dockerfile: Dockerfile
+    ports:
+       - 9002:9002
+    links:
+       - mongodb-service
 volumes:
   mongo-data:

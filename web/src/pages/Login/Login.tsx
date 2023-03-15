@@ -19,7 +19,11 @@ export function Login({ setUserAccount }: ILogin) {
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     if (email.includes("@")) {
-      const userAccount = shapeUserAccount("No Name", "No Last Name", email);
+      const userAccount = shapeUserAccount(
+        "No Name",
+        "No Last Name",
+        email.trim().toLowerCase()
+      );
       setUserAccount(userAccount);
       navigate(NavPaths.DefaultAfteLogin.path);
     }
