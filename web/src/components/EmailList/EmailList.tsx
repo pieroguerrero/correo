@@ -11,14 +11,16 @@ interface IEmailList {
 export function EmailList({ emails }: IEmailList) {
   const today = new Date().toDateString();
   return (
-    <table className="w-full">
-      <tbody>
-        {emails.length === 0
-          ? null
-          : emails.map((email) => (
-              <EmailItem key={email._id} email={email} today={today} />
-            ))}
-      </tbody>
-    </table>
+    <>
+      <table className="w-full h-full">
+        <tbody>
+          {emails.length === 0
+            ? null
+            : emails.map((email) => (
+                <EmailItem key={email._id} email={email} today={today} />
+              ))}
+        </tbody>
+      </table>
+    </>
   );
 }

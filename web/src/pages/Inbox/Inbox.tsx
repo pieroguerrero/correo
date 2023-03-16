@@ -33,23 +33,25 @@ export function Inbox() {
     );
   });
   return (
-    <div className="grid h-full grid-cols-1 grid-rows-[max-content_max-content_auto]">
-      <section className="  row-start-1 row-end-2">
-        <EmailFilters />
-      </section>
-      <section className="  row-start-2 row-end-3">
-        <EmailTabs />
-      </section>
-      <section className=" bg-white row-start-3 row-end-4">
-        {(() => {
-          if (isLoading) return <div>Loading...</div>;
+    <>
+      <div className="grid h-full grid-cols-1 grid-rows-[max-content_max-content_auto]">
+        <section className="  row-start-1 row-end-2">
+          <EmailFilters />
+        </section>
+        <section className="  row-start-2 row-end-3">
+          <EmailTabs />
+        </section>
+        <section className=" bg-white row-start-3 row-end-4">
+          {(() => {
+            if (isLoading) return <div>Loading...</div>;
 
-          if (error || data === undefined)
-            return <div>Error while fetching data</div>;
+            if (error || data === undefined)
+              return <div>Error while fetching data</div>;
 
-          return <EmailList emails={data} />;
-        })()}
-      </section>
-    </div>
+            return <EmailList emails={data} />;
+          })()}
+        </section>
+      </div>
+    </>
   );
 }

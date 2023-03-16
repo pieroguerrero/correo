@@ -1,5 +1,4 @@
-import format from "date-fns/format";
-import parseISO from "date-fns/parseISO";
+import { parseISO, format } from "date-fns";
 import { IEmailListDTO } from "../../../dtos";
 
 interface IEmailItem {
