@@ -28,12 +28,14 @@
 - This is a coding challenge built to apply to the 'Senior Fullstack Developer' position at [Vertrical](https://vertrical.com/).
 - This is a Fullstack project that tries to simulate an Email Server with a minimalistic UI ispired by Gmail.
 
-
 ## Technologies and Techniques used
 
 ### Planning and Design:
-- Since there is only one resource in the project, it was developed with [Scrum](https://www.scrum.org/resources/what-is-scrum). The duration was 24 hours distributed in 6 days splited in 2-day simulated sprints. Having at the end 3 Sprints.
 - The planning was done with the [User Story Mapping](https://www.visual-paradigm.com/guide/agile-software-development/what-is-user-story-mapping/) technique, you can fin the full [User Story Map here](https://miro.com/app/board/uXjVMfb1fmQ=/?share_link_id=329505898247).
+- Since there is only one resource in the project, it was developed with [Scrum](https://www.scrum.org/resources/what-is-scrum). The duration was 24 hours distributed in 6 days splited in 2-day simulated sprints. Having at the end 3 Sprints. You can see a picture of the Trello board here:
+
+  <img src="https://user-images.githubusercontent.com/26049605/225794927-821e2e91-b591-414b-8c7c-4d6bdbb4caaa.png" width="500px" height="auto" alt="Login" title="Click to enlarge">
+
 - The Inbox and Login Uis were inspired by [Gmail](https://mail.google.com/).
 - The Systems Design Diagram can be found [here](https://drive.google.com/file/d/1awYVZcryBreVj1_nT0LUXJGtDdmlKoHM/view?usp=sharing).
 - The Entity Relationship Diagram (ERD) can be found [here](https://drive.google.com/file/d/1IRz-qff3EnDrrpPMdhp_vruRbCM3Mi5T/view?usp=sharing).
