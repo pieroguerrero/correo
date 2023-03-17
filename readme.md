@@ -66,24 +66,20 @@
 
     ```
     📦src
-    ┣ 📂adapters
-    ┣ 📂assets
-    ┃ ┣ 📂filters
-    ┃ ┣ 📂sidemenu
-    ┣ 📂components
-    ┣ 📂configs
-    ┣ 📂contexts
-    ┣ 📂dtos
-    ┣ 📂hooks
-    ┣ 📂interfaces
-    ┣ 📂layouts
-    ┣ 📂models
-    ┣ 📂pages
-    ┣ 📂redux
-    ┣ 📂services
-    ┣ 📂utilities
-    ┣ 📂__mocks__
-    ┣ 📂__tests__
+    ┣ 📂assets => Media files e.g: Pictures, Video, Fonts, etc.
+    ┣ 📂components => Common components that are used in multiple parts of the project.
+    ┣ 📂configs => Parameters used along the project.
+    ┣ 📂contexts => State manages recommended for states that are not transformed or changed a long the application.
+    ┣ 📂dtos => Transfer objects used as middlewares when transfering data between different components or layers.
+    ┣ 📂hooks => Custom hooks.
+    ┣ 📂layouts => Common layout section that are present across the across the pages, such as Navigation bar or footer.
+    ┣ 📂models => Entity representation, this is also where the typescript Interfaces are defined.
+    ┣ 📂pages => Web site views (Login, Landing, Sigup, etc).
+    ┣ 📂redux => Unique source of truth, stores the states that are needed globally in the project.
+    ┣ 📂services => External services consumed by the application. They could be APIs or other type of interaction with the environment.
+    ┣ 📂utilities => Functions or logic that is used in several parts of the project.
+    ┣ 📂__mocks__ => Mock data or functions used in tests.
+    ┣ 📂__tests__ => Test files.
     ┃ ┣ 📂integration
     ┃ ┗ 📂unit
     ┣ 📜App.tsx
@@ -111,21 +107,21 @@
 
     ```
     📦src
-    ┣ 📂configuration
-    ┣ 📂controllers
-    ┣ 📂core
+    ┣ 📂configuration => Parameters used along the project.
+    ┣ 📂controllers => Intermediate layers that can be controllers, presenters or gateways.
+    ┣ 📂core => The center of the application.
     ┃ ┣ 📂abstracts
     ┃ ┣ 📂data-transfer-objects
-    ┃ ┣ 📂entities
-    ┣ 📂frameworks
-    ┃ ┣ 📂data-service
+    ┃ ┣ 📂entities => Business entities that construct our application.
+    ┣ 📂frameworks => External services consumed by the application.
+    ┃ ┣ 📂data-service => Database 
     ┃ ┃ ┣ 📂models
-    ┃ ┗ 📂incoming-email-service
-    ┣ 📂services
-    ┣ 📂use-cases
+    ┃ ┗ 📂incoming-email-service => Web socket
+    ┣ 📂services => Implementation of the abstract classes
+    ┣ 📂use-cases => Business logic of the application.
     ┃ ┗ 📂email
-    ┣ 📂util
-    ┣ 📂__tests__
+    ┣ 📂util => Functions or logic that is used in several parts of the project.
+    ┣ 📂__tests__ => Test files.
     ┣ 📜app.module.ts
     ┗ 📜main.ts
     ```
