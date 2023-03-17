@@ -1,5 +1,5 @@
 import { IEmailListDTO } from "../../dtos";
-import ConfigValues from "../../utilities/ConfigValues";
+import ConfigValues from "../../configs/ConfigValues";
 import { handleException } from "../error-handling-service/error-handling-service";
 import { getData } from "./axios-generic";
 

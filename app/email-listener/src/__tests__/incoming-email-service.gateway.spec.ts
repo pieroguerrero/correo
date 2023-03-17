@@ -1,5 +1,5 @@
 import { Test, TestingModule } from '@nestjs/testing';
-import { IncomingEmailGatewayService } from './incoming-email-gateway.service';
+import { IncomingEmailGatewayService } from '../frameworks/incoming-email-service/incoming-email-gateway.service';
 
 describe('IncomingEmailServiceGateway', () => {
   let gateway: IncomingEmailGatewayService;

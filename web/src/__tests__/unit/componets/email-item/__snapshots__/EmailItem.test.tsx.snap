@@ -59,6 +59,7 @@ exports[`EmailItem.tsx UI layout and design are remain the same 1`] = `
           >
             <div
               class="w-[200px] text-left"
+              title="nigerianprince@email.com"
             >
               <p
                 class="text-sm font-bold "

@@ -2,7 +2,7 @@ import axios from "axios";
 import MockAdapter from "axios-mock-adapter";
 import { render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
-import ConfigValues from "../../utilities/ConfigValues";
+import ConfigValues from "../../configs/ConfigValues";
 import { emailAddress, emailItemsList } from "../../__mocks__/emailItemsMock";
 import "@testing-library/jest-dom";
 import App from "../../App";

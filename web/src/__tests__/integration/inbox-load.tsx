@@ -4,7 +4,7 @@ import axios from "axios";
 import { BrowserRouter } from "react-router-dom";
 import ReactQueryProvider from "../../contexts/ReactQueryContext";
 import { UserAccountProvider } from "../../contexts/UserAccountContext";
-import { Inbox } from "../../pages/Inbox/Inbox";
+import Inbox from "../../pages/Inbox/Inbox";
 import { emailItemsList } from "../../__mocks__/emailItemsMock";
 import { useAccountMock } from "../../__mocks__/useAccountMock";
 

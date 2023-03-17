@@ -6,14 +6,14 @@ import { UserAccountContext } from "../../contexts/UserAccountContext";
 import { IEmailListDTO } from "../../dtos";
 import useNewEmailNotification from "../../hooks/useWebSocket";
 import { listInboxEmails } from "../../services/api-service/email-service";
-import ConfigValues from "../../utilities/ConfigValues";
+import ConfigValues from "../../configs/ConfigValues";
 import { EmailTabs } from "./components/EmailTabs/EmailTabs";
 
 /**
  * Renders thte main email folder component: the Inbox.
  * @returns
  */
-export function Inbox() {
+export default function Inbox() {
   const userAccount = useContext(UserAccountContext);
   const { isLoading, data, error } = useQuery<IEmailListDTO[]>(
     ConfigValues.ReactQueryKeys.InboxEmails,

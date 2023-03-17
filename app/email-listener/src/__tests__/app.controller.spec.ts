@@ -1,5 +1,5 @@
 import { Test, TestingModule } from '@nestjs/testing';
-import { AppController } from './controllers/app.controller';
+import { AppController } from 'src/controllers/app.controller';
 
 describe('AppController', () => {
   let appController: AppController;
@@ -14,8 +14,10 @@ describe('AppController', () => {
   });
 
   describe('root', () => {
-    it('should return "Hello World!"', () => {
-      expect(appController.getHello()).toBe('Hello World!');
+    it('should return "Email Listener Service is up and running"', () => {
+      expect(appController.getMessage()).toBe(
+        'Email Listener Service is up and running',
+      );
     });
   });
 });

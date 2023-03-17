@@ -48,7 +48,7 @@ export default function EmailItem({ email, today }: IEmailItem) {
       </td>
       <td className="flex-1 shrink-0 flex items-center">
         <button className="flex flex-row items-center space-x-4 w-full">
-          <div className="w-[200px] text-left">
+          <div className="w-[200px] text-left" title={email.from}>
             <p className="text-sm font-bold ">
               {email.senderName ? email.senderName : email.from}
             </p>
