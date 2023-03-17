@@ -38,7 +38,13 @@
 
 - The Inbox and Login Uis were inspired by [Gmail](https://mail.google.com/).
 - The Systems Design Diagram can be found [here](https://drive.google.com/file/d/1awYVZcryBreVj1_nT0LUXJGtDdmlKoHM/view?usp=sharing).
+
+  <img src="https://user-images.githubusercontent.com/26049605/225910510-36399f59-a8c2-4b8b-9678-c86e9c44a470.png" width="550px" height="auto" alt="System design" title="Click to enlarge">
+
 - The Entity Relationship Diagram (ERD) can be found [here](https://drive.google.com/file/d/1IRz-qff3EnDrrpPMdhp_vruRbCM3Mi5T/view?usp=sharing).
+
+  <img src="https://user-images.githubusercontent.com/26049605/225910723-9d76abb2-d638-4299-873b-968089657a52.png" width="550px" height="auto" alt="ERD" title="Click to enlarge">
+
 - GitHub is used as source control.
 - The internal project was divided in two: **Web** that represents the Frontend and **App** that represents the Backend.
 
@@ -238,7 +244,7 @@ By default Vite uses the port 5173.
 1. Access to the client: [http://localhost:5174/](http://localhost:5174/)
 2. At the Login page, enter any email you want to test (e.g: myemail@email.com) and then click on Next.
 3. Open Postman or any other API tester application you profer.
-4. Send a new email via the Email Listener service with a Post request: [http://localhost:9001/correo/receive](http://localhost:9001/correo/receive) and use this JSON format in the Body: 
+4. Send a new email via the Email Listener service with a Post request: [http://localhost:9001/correo/receive](http://localhost:9001/correo/receive). You can add multiple emails separated by commas and the Web socket service is going to notify all the accounts are connected at that time via the Client. You can use this JSON format in the Body: 
 ```
 { 
     "from": "nigerianprince@email.com",
