@@ -1,5 +1,5 @@
 # Vertrical coding challenge - Correo
-> Email server and GMail inbox clone.
+> Correo is an Email server and GMail inbox clone.
 
 ## Table of Contents
 - [Vertrical coding challenge - Correo](#vertrical-coding-challenge---correo)
@@ -34,7 +34,7 @@
 - The planning was done with the [User Story Mapping](https://www.visual-paradigm.com/guide/agile-software-development/what-is-user-story-mapping/) technique, you can fin the full [User Story Map here](https://miro.com/app/board/uXjVMfb1fmQ=/?share_link_id=329505898247).
 - Since there is only one resource in the project, it was developed with [Scrum](https://www.scrum.org/resources/what-is-scrum). The duration was 24 hours distributed in 6 days splited in 2-day simulated sprints. Having at the end 3 Sprints. You can see a picture of the Trello board here:
 
-  <img src="https://user-images.githubusercontent.com/26049605/225794927-821e2e91-b591-414b-8c7c-4d6bdbb4caaa.png" width="500px" height="auto" alt="Login" title="Click to enlarge">
+  <img src="https://user-images.githubusercontent.com/26049605/225794927-821e2e91-b591-414b-8c7c-4d6bdbb4caaa.png" width="550px" height="auto" alt="Login" title="Click to enlarge">
 
 - The Inbox and Login Uis were inspired by [Gmail](https://mail.google.com/).
 - The Systems Design Diagram can be found [here](https://drive.google.com/file/d/1awYVZcryBreVj1_nT0LUXJGtDdmlKoHM/view?usp=sharing).
@@ -45,7 +45,7 @@
 
 | Login | Inbox | 
 | ------------ | -------------- | 
-| <img src="https://user-images.githubusercontent.com/26049605/225793325-5cfc2202-74bd-475a-a493-aef26cd1520e.png" width="200px" height="auto" alt="Login" title="Click to enlarge">   | <img src="https://user-images.githubusercontent.com/26049605/225793251-bee789c9-152d-4b13-a423-bf816d204c77.png" width="500px" height="auto" alt="Inbos" title="Click to enlarge">     | 
+| <img src="https://user-images.githubusercontent.com/26049605/225793325-5cfc2202-74bd-475a-a493-aef26cd1520e.png" width="250px" height="auto" alt="Login" title="Click to enlarge">   | <img src="https://user-images.githubusercontent.com/26049605/225793251-bee789c9-152d-4b13-a423-bf816d204c77.png" width="550px" height="auto" alt="Inbos" title="Click to enlarge">     | 
 
 
 ### Front-end:
@@ -89,7 +89,6 @@
     ┣ 📜App.tsx
     ┣ 📜index.css
     ┣ 📜main.tsx
-
     ```
 
 ### Back-end:
@@ -129,8 +128,8 @@
     ┣ 📂__tests__
     ┣ 📜app.module.ts
     ┗ 📜main.ts
-
     ```
+
 #### List Emails
 - This service provides an API to retrieve emails from an specific email account.
 - The REST API implemented with NestJS.
@@ -154,7 +153,6 @@
     ┣ 📂__tests__
     ┣ 📜app.module.ts
     ┗ 📜main.ts
-
     ```
 
 ### Testing:
