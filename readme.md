@@ -32,7 +32,7 @@
 
 ### Planning and Design:
 - The planning was done with the [User Story Mapping](https://www.visual-paradigm.com/guide/agile-software-development/what-is-user-story-mapping/) technique, you can fin the full [User Story Map here](https://miro.com/app/board/uXjVMfb1fmQ=/?share_link_id=329505898247).
-- Since there is only one resource in the project, it was developed with [Scrum](https://www.scrum.org/resources/what-is-scrum). The duration was 24 hours distributed in 6 days splited in 2-day simulated sprints. Having at the end 3 Sprints. You can see a picture of the Trello board here:
+- Since there is only one resource in the project, it was developed with [Scrum](https://www.scrum.org/resources/what-is-scrum). The duration was 32 hours distributed in 6 days splited in 2-day simulated sprints. Having at the end 3 Sprints. You can see a picture of the Trello board here:
 
   <img src="https://user-images.githubusercontent.com/26049605/225794927-821e2e91-b591-414b-8c7c-4d6bdbb4caaa.png" width="550px" height="auto" alt="Login" title="Click to enlarge">
 
