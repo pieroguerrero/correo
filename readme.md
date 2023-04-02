@@ -1,8 +1,8 @@
-# Vertrical coding challenge - Correo
+# Email Server and Client - "Correo"
 > Correo is an Email server and GMail inbox clone.
 
 ## Table of Contents
-- [Vertrical coding challenge - Correo](#vertrical-coding-challenge---correo)
+- [Email Server and Client - Correo](#email-server-and-client---correo)
   - [Table of Contents](#table-of-contents)
   - [General Information](#general-information)
   - [Technologies and Techniques used](#technologies-and-techniques-used)
