@@ -25,8 +25,7 @@
 
 
 ## General Information
-- This is a coding challenge built to apply to the 'Senior Fullstack Developer' position at [Vertrical](https://vertrical.com/).
-- This is a Fullstack project that tries to simulate an Email Server with a minimalistic UI ispired by Gmail.
+- This is a Fullstack project that simulates an Email Server with the MVP of a a minimalistic UI ispired by Gmail.
 
 ## Technologies and Techniques used
 
